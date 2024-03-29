@@ -1,0 +1,96 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+/* menu items */
+.logo-default {
+  height: 45px !important;
+}
+.cnvs-hamburger-box {
+  background-color: black;
+}
+.menu-link {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+/* button on header */
+.primary-menu a {
+  color: black;
+}
+.primary-menu a:hover {
+  color: black;
+}
+.red-letter {
+  color: red !important;
+}
+.gradient-text {
+  font-size: 30px;
+}
+.display-4,
+.font-body,
+.text-white-50,
+.font-body1,
+.font-body2 {
+  color: black !important;
+}
+.display-4 {
+  font-weight: 200;
+  line-height: 100px;
+}
+.font-body,
+.text-white-50 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+
+.custom-button {
+  color: black;
+}
+.container .button:hover {
+  color: black;
+}
+.d-block {
+  margin-bottom: 40px;
+}
+
+.text-center,
+.widget_links,
+.widget_links a {
+  color: black !important;
+}
+
+.copyright-links a {
+  color: red;
+}
+
+.event-list {
+  padding: 10px !important;
+}
+
+.tableimg {
+  height: 650px;
+  width: 600px;
+  border-radius: 7%;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  border: 3px solid;
+}
+
+/* table butto */
+.btn {
+  color: black;
+}
+
+.titl {
+  font-size: 21px;
+}
+
+.error {
+  border: 1px solid red;
+}

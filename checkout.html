@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="forms.css" />
+
+    <!-- Core Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Icons -->
+    <link rel="stylesheet" href="css/font-icons.css" />
+
+    <!-- Niche Demos -->
+    <link rel="stylesheet" href="demos/conference.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>KONKA MOTSWAKO WEEKEND</title>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <img class="checkimg" src="images/Ticket Cinema Performance.png" alt="" />
+      <br />
+      <label for=""> Date:</label>
+      <label id="datePurchased"></label>
+      <br />
+      <label for=""> Time: </label>
+      <label id="time"></label>
+      <br />
+      <hr />
+      <label for=""> Ticket no: </label>
+      <label id="ticketNumber"></label>
+      <br />
+      <br />
+      <label for="">Ticket type:</label>
+      <label id="ticketType"></label>
+      <br />
+      <br />
+      <label for="">Number of people: </label>
+      <label id="numberOfPeople"></label>
+      <br />
+      <br />
+      <label for="">Price:</label>
+      <label id="ticketPrice"> </label>
+      <br />
+      <hr />
+      <label for="">Subtotal:</label>
+      <label id="subtotal"></label>
+      <br />
+      <label for="">Tax (5%):</label>
+      <label id="tax"></label>
+      <br />
+      <br />
+      <label for="">Total:</label>
+      <label id="total"></label>
+      <br />
+      <hr />
+      <button
+        class="checkout-btn"
+        onclick="window.location.href = 'payment.html';"
+      >
+        Checkout
+      </button>
+    </div>
+
+    <script>
+      // This function will run when the page is fully loaded
+      window.onload = function () {
+        // Retrieve the ticket details from local storage and parse it from JSON to a JavaScript object
+        let ticketDetails = JSON.parse(localStorage.getItem("ticketDetails"));
+
+        // If ticketDetails is not null or undefined
+        if (ticketDetails) {
+          // Set the text content of the elements with the corresponding IDs to the values from ticketDetails
+          document.getElementById("datePurchased").textContent =
+            ticketDetails.datePurchased;
+          document.getElementById("ticketNumber").textContent =
+            ticketDetails.ticketNumber;
+          document.getElementById("ticketType").textContent =
+            ticketDetails.ticketType;
+          document.getElementById("ticketPrice").textContent =
+            ticketDetails.ticketPrice;
+          document.getElementById("numberOfPeople").textContent =
+            ticketDetails.numberOfPeople;
+          document.getElementById("time").textContent = ticketDetails.time;
+
+          // Calculate the subtotal by parsing the ticket price to a float
+          let subtotal = parseFloat(ticketDetails.ticketPrice);
+          // Calculate the tax as 5% of the subtotal
+          let tax = subtotal * 0.05;
+          // Calculate the total as the subtotal plus the tax
+          let total = subtotal + tax;
+
+          // Set the text content of the elements with the corresponding IDs to the calculated values
+          // The toFixed(2) method is used to round the values to 2 decimal places
+          document.getElementById(
+            "subtotal"
+          ).textContent = `R: ${subtotal.toFixed(2)}`;
+          document.getElementById("tax").textContent = `R: ${tax.toFixed(2)}`;
+          document.getElementById("total").textContent = `R: ${total.toFixed(
+            2
+          )}`;
+        }
+      };
+    </script>
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="uil uil-angle-up"></div>
+
+    <!-- JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+
+    <!-- <script src="js/functions.js"></script>  -->
+
+    <!-- Parallax Script
+	============================================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+      if (!window.matchMedia("only screen and (max-width: 760px)").matches) {
+        skrollr.init({ forceHeight: false });
+      }
+      // !SEMICOLON.Mobile.any() && skrollr.init({ forceHeight: false });
+    </script>
+  </body>
+</html>
