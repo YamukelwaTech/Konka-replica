@@ -9,16 +9,12 @@ class Countdown {
 
   tick() {
     this.count--; // Decrement countdown every second
-    // If countdown reaches 0, open the specified HTML file and stop the countdown
+    console.log(this.count); // Log the countdown value for debugging
+    // If countdown reaches 0, redirect to the specified HTML file and stop the countdown
     if (this.count === 0) {
       this.stop(); // Call stop method to clear the interval
-      // Open the specified HTML file after 10 seconds
-      const newWindow = window.open("html/signup.html", "_blank");
-      if (newWindow) {
-        newWindow.onload = () => {
-          window.close(); // Close the current window after opening the new one
-        };
-      }
+      // Redirect to the specified HTML file after 10 seconds
+      window.location.href = "html/signup.html";
     }
   }
 
